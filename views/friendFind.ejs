@@ -1,0 +1,30 @@
+   <% include ./partials/head %>
+   <header>
+     <% include ./partials/navbar %>
+   </header>
+    <div class="container">
+        <h4 class='center'>Friends Found</h4>
+        <hr />
+        <div class="section"></div>
+        <div class="divider"></div>
+        <div class="row">
+            <table class='table col m8 s12'>
+                <thead>
+                    <th>Friend Name</th>
+                    <th>Friend Note</th>
+                </thead>
+                <tbody>
+                    <% friends.forEach( function(friend) { %>
+                        <tr>
+                            <td>
+                                <%= friend.friend_name %>
+                            </td>
+                            <td>
+                                <%= friend.friend_note %>
+                            </td>
+                        </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+     </div>
+<% include ./partials/footer %>

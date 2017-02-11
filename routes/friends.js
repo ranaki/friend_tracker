@@ -68,5 +68,22 @@ router.delete('/:id', function(req, res, next) {
   });
 });
 
+// Friend Finder
+/* GET a friend */
+router.get('/find/:name', function(req, res, next) {
+ console.log("find this: " + req.params.name);
+//  Friend.find({'friend_name': 'req.params.name'}, function(err, friends) {
+   Friend.find({'friend_name': req.params.name}, function(err, friends) {
+   res.render('friendFind', { friends: friends });
+ });
+});
+
+/* GET a friend */
+router.get('/find', function(req, res, next) {
+  console.log("find this friend page");
+  //  Friend.find({'friend_name': req.params.name}, function(err, friends) {
+   res.render('friendFind', {});
+ });
+
 
 module.exports = router;
