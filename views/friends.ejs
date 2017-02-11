@@ -8,14 +8,21 @@
      <% include ./partials/navbar %>
    </header>
     <div class="container">
-        <h1 class='center'>My Friends</h1>
+        <h4 class='center'>Friends List</h4>
         <hr />
         <div class='row'>
-            <div class='col s12 m4'>
-                <h3>Add Friend</h3>
+            <div class='col s12'>
+            <div class="section"</div>
+                <h5>Add Friend</h5>
                 <form action='/friends' method='POST'>
-                    <input type='text' name='friend_name' placeholder='name' />
-                    <input type='text' name='friend_note' placeholder='note' />
+                    <div class="row">
+                        <div class="input-field col s4">
+                            <input type='text' name='friend_name' placeholder='name' />
+                        </div>
+                        <div class="input-field col s8">
+                            <input type='text' name='friend_note' placeholder='note' />
+                        </div>
+                    </div>
                     <button class='btn btn-waves' type='submit'>Add</button>
                 </form>
             </div>
