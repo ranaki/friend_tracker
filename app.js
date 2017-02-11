@@ -9,7 +9,6 @@ mongoose.connect('mongodb://localhost/friendsdb');
 
 var index = require('./routes/index');
 var friends = require('./routes/friends');
-// var users = require('./routes/users');
 
 var app = express();
 
@@ -27,7 +26,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/friends', friends);
-// app.use('/users', users);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+ <head>
+   <% include ./partials/head %>
+ </head>
+ <body>
+   <header>
+     <% include ./partials/navbar %>
+   </header>
+      <div class="container">
+        <a href='/friends'>Back</a>
+        <h1 class='center'><%= friend.friend_name %></h1>
+        <hr />
+        <% var action = '/friends/edit/' + friend.id %>
+        <form action=<%= action %> method='POST'>
+            <input type='text' name='friend_name' value=<%= friend.friend_name %> />
+            <input type='text' name='friend_note' value="<%= friend.friend_note %>" />
+            <button class='btn btn-waves'>Update</button>
+        </form>
+      </div>
+ </body>
+</html>
