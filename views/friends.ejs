@@ -33,15 +33,18 @@
                     <% friends.forEach( function(friend) { %>
                     <% action = '/friends/' + friend.id %>
                         <tr>
-                        <td>
-                        <a href=<%= action %>><%= friend.friend_name %></a>
-                        </td>
-                        <td><%= friend.friend_note %></td>
-                        <td>
-                        <form action=<%= action %> method='POST'>
-                            <button class='btn waves-effect' type='submit'>Delete</button>
-                        </form>
-                        </td>
+                            <td>
+                                <a href=<%= action %>><%= friend.friend_name %></a>
+                            </td>
+                            <td>
+                                <%= friend.friend_note %>
+                            </td>
+                            <td>
+                                <form action=<%= action %> method='POST'>
+                                    <button class='btn waves-effect' type='submit'>Delete</button>
+                                </form>
+                            </td>
+                        </tr>
                     <% }); %>
                 </tbody>
             </table>

@@ -39,6 +39,18 @@ router.post('/edit/:id', function(req, res, next) {
  });
 });
 
+router.put('/:id', function(req, res) {
+    var body = {
+        friend_name: req.body.friend_name, 
+        friend_note: req.body.friend_note, 
+        note_create_date: Date.now() 
+    };
+
+    Friend.findByIdAndUpdate( req.params.id, { $set: body }, function(err, song) {
+            res.redirect('/friends/' + req.params.id);
+    });
+});
+
 /* DELETE a friend */
 router.post('/:id', function(req, res, next) {
  Friend.findById(req.params.id, function(err, friend) {
@@ -47,5 +59,14 @@ router.post('/:id', function(req, res, next) {
    });
   });
 });
+
+router.delete('/:id', function(req, res, next) {
+ Friend.findById(req.params.id, function(err, friend) {
+   friend.remove( function(err, friend) {
+     res.redirect('/friends');
+   });
+  });
+});
+
 
 module.exports = router;
