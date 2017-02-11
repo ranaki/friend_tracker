@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+ <head>
+   <% include ./partials/head %>
+ </head>
+ <body>
+   <header>
+     <% include ./partials/header %>
+   </header>
+   <h1 class='center'>My Friends</h1>
+   <hr />
+   <div class='row'>
+     <div class='col s12 m4'>
+       <h3>Add Friend</h3>
+       <form action='/friends' method='POST'>
+         <input type='text' name='friend_name' placeholder='name' />
+         <input type='text' name='friend_note' placeholder='note' />
+         <button class='btn btn-waves' type='submit'>Add</button>
+       </form>
+     </div>
+     <table class='table col m8 s12'>
+       <thead>
+         <th>Friend Name</th>
+         <th>Friend Note</th>
+         <th>Action</th>
+       </thead>
+       <tbody>
+         <% friends.forEach( function(friend) { %>
+           <% action = '/friends/' + friend.id %>
+             <tr>
+             <td>
+               <a href=<%= action %>><%= friend.friend_name %></a>
+             </td>
+             <td><%= friend.friend_note %></td>
+             <td>
+               <form action=<%= action %> method='POST'>
+                 <button class='btn waves-effect' type='submit'>Delete</button>
+               </form>
+             </td>
+         <% }); %>
+       </tbody>
+     </table>
+   </body>
+</html>
