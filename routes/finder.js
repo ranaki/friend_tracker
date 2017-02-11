@@ -11,23 +11,8 @@ router.get('/:name', function(req, res, next) {
  });
 });
 
-/* GET a friend */
-// router.get('/', function(req, res, next) {
-//  console.log("find this: " + req.params.name);
-//    Friend.find({'friend_name': req.params.name}, function(err, friends) {
-//    res.render('friendFind', { friends: friends });
-//  });
-// });
-
-// router.get('/', function(req, res, next) {
-//  console.log("find this: " + req.query.friend_name);
-//    Friend.find({'friend_name': req.query.friend_name}, function(err, friends) {
-//    res.render('friendFind', { friends: friends });
-//  });
-// });
-
 router.get('/', function(req, res, next) {
-    var data = req.query.friend_name;
+   var data = req.query.friend_name;
    Friend.find({'friend_name': new RegExp(data, 'i')}, function(err, friends) {
    res.render('friendFind', { friends: friends });
  });
