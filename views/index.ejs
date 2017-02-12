@@ -3,8 +3,18 @@
      <% include ./partials/navbar %>
    </header>
       <div class="container">
-        <h1><%= title %></h1>
-        <p>Welcome to <%= title %></p>
+      <div>
+        <h3><%= title %></h3>
+        <h5>Welcome to <%= title %>, where you keep notes about your friends</h5>
+      </div>
+      <div class="divider"></div>
+      <div>
+        <h5>What do you want to do?</h5>
+        <ul>
+          <li><a href="/friends">Add or Edit</a> Friends</li>
+          <li><a href="/finder">Search</a> your Friend list</li>
+        <ul>
+      </div>
       </div>
   </body>
 </html>
