@@ -86,4 +86,11 @@ router.get('/find', function(req, res, next) {
  });
 
 
+// About page
+router.get('/about', function(req, res, next) {
+ Friend.find( function ( err, friends, count ) {jjjj
+   res.render('about', { title: title });
+ });
+});
+
 module.exports = router;
